@@ -28,6 +28,7 @@ class Note:
     def folder(self, folder):
         if not isinstance(folder, Folder):
             raise ValueError('Folder must be a Folder object')
+        print(f"Adding note: {self.title} to folder: {folder.name}")
         folder.add_note(self)
         self._folder = folder
         self.update_last_edited()

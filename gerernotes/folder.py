@@ -10,6 +10,9 @@ class Folder:
     def add_note(self, note):
         self.notes.append(note)
     
+    def remove_note(self, note):
+        self.notes.remove(note)
+    
     def __str__(self):
         return f"""
         Name: {self.name}
