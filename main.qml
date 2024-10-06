@@ -22,7 +22,15 @@ ApplicationWindow {
     title: appVariables.appName
     color: colorVariables.backgroundColor1
 
-    SplashView {
-        visible: true
+    // SplashView {
+    //     visible: true
+    // }
+
+    StackView {
+        anchors.fill: parent
+
+        EmptyListView {
+
+        }
     }
 }
