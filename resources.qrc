@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>styles/AppStyles.qml</file>
         <file>views/MainView.qml</file>
         <file>components/GrButton.qml</file>
         <file>assets/logo.png</file>
@@ -9,5 +8,12 @@
         <file>views/SplashView.qml</file>
         <file>assets/empty_list.png</file>
         <file>views/EmptyListView.qml</file>
+        <file>views/EditNoteView.qml</file>
+        <file>assets/back.png</file>
+        <file>assets/save.png</file>
+        <file>assets/plus.png</file>
+        <file>variables/ColorVariables.qml</file>
+        <file>variables/AppVariables.qml</file>
+        <file>variables/TypographyVariables.qml</file>
     </qresource>
 </RCC>

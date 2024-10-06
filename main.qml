@@ -1,27 +1,28 @@
 import QtQuick
 import QtQuick.Controls.Fusion
-import QtQuick.Layouts
-import "./views"
+import QtQuick.Window
+import "./variables"
 import "./components"
-import "./styles"
+import "./views"
 
 ApplicationWindow {
-    visible: true
-    width: 1024
-    height: 680
-    title: "Gerer Notes"
-    color: "#161719"
+    id: root
 
-    SplashView {
-        id: splashView
-        visible: false
+    // Variables
+    AppVariables {
+        id: appVariables
+    }
+    ColorVariables {
+        id: colorVariables
     }
 
-    StackView {
-        anchors.fill: parent
+    visible: true
+    width: appVariables.appWidth
+    height: appVariables.appHeight
+    title: appVariables.appName
+    color: colorVariables.backgroundColor1
 
-        EmptyListView {
-            anchors.centerIn: parent
-        }
+    SplashView {
+        visible: true
     }
 }
