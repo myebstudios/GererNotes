@@ -106,6 +106,10 @@ Page {
             leftPadding: 32
             rightPadding: 32
 
+            background: Rectangle {
+                color: "transparent"
+            }
+
             RowLayout {
                 // spacing: 8
                 anchors.fill: parent
@@ -123,21 +127,21 @@ Page {
                     Rectangle {
                         width: parent.width
                         height: width
-                        color: colorVariables.primaryColor
+                        color: colorVariables.backgroundColor3
                         radius: 4
                     }
 
                     Rectangle {
                         width: parent.width
                         height: width
-                        color: colorVariables.primaryColor
+                        color: colorVariables.backgroundColor3
                         radius: 4
                     }
 
                     Rectangle {
                         width: parent.width
                         height: width
-                        color: colorVariables.primaryColor
+                        color: colorVariables.backgroundColor3
                         radius: 4
                     }
                 }

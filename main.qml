@@ -23,13 +23,13 @@ ApplicationWindow {
     title: appVariables.appName
     color: colorVariables.backgroundColor1
 
-    // SplashView {
-    //     visible: true
-    // }
+    SplashView {
+        visible: true
+    }
 
     StackLayout {
         anchors.fill: parent
-        currentIndex: 1
+        currentIndex: 0
 
         EmptyListView {}
         EditNoteView {}
