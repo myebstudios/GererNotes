@@ -6,7 +6,9 @@ import "../components"
 
 Page {
     id: root
-    anchors.fill: parent
+    Layout.fillWidth: true
+    Layout.fillHeight: true
+
     background: Rectangle {
         color: "transparent"
     }

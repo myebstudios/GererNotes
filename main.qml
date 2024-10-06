@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls.Fusion
 import QtQuick.Window
+import QtQuick.Layouts
 import "./variables"
 import "./components"
 import "./views"
@@ -26,11 +27,11 @@ ApplicationWindow {
     //     visible: true
     // }
 
-    StackView {
+    StackLayout {
         anchors.fill: parent
+        currentIndex: 1
 
-        EmptyListView {
-
-        }
+        EmptyListView {}
+        EditNoteView {}
     }
 }
