@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>styles/AppStyles.qml</file>
+        <file>views/MainView.qml</file>
+        <file>components/GrButton.qml</file>
+        <file>assets/logo.png</file>
+        <file>components/GrProgress.qml</file>
+        <file>views/SplashView.qml</file>
+        <file>assets/empty_list.png</file>
+        <file>views/EmptyListView.qml</file>
+    </qresource>
+</RCC>
