@@ -15,5 +15,8 @@
         <file>variables/ColorVariables.qml</file>
         <file>variables/AppVariables.qml</file>
         <file>variables/TypographyVariables.qml</file>
+        <file>components/GrNote.qml</file>
+        <file>assets/file.png</file>
+        <file>assets/more.png</file>
     </qresource>
 </RCC>

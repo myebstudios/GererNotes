@@ -24,14 +24,15 @@ ApplicationWindow {
     color: colorVariables.backgroundColor1
 
     SplashView {
-        visible: true
+        visible: false
     }
 
     StackLayout {
         anchors.fill: parent
-        currentIndex: 0
+        currentIndex: 2
 
         EmptyListView {}
         EditNoteView {}
+        MainView {}
     }
 }
