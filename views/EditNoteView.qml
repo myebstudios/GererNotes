@@ -100,19 +100,14 @@ Page {
     StackLayout {
         anchors.fill: parent
 
-        Pane {
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            leftPadding: 32
-            rightPadding: 32
-
-            background: Rectangle {
-                color: "transparent"
-            }
-
             RowLayout {
                 // spacing: 8
-                anchors.fill: parent
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+
+                Rectangle {
+                    width: 24
+                }
 
                 // Text tools
                 ColumnLayout {
@@ -121,47 +116,113 @@ Page {
                     spacing: 8
 
                     Rectangle {
-                        height: 4
+                        height: 2
                     }
 
                     Rectangle {
+                        id: previewButton
                         width: parent.width
                         height: width
-                        color: colorVariables.backgroundColor3
+                        color: isActive ? colorVariables.primaryColor : colorVariables.backgroundColor2
                         radius: 4
+
+                        property bool isActive: false
+
+                        MouseArea {
+                            anchors.fill: parent
+
+                            onClicked: previewButton.isActive = !previewButton.isActive
+                        }
                     }
 
                     Rectangle {
+                        id: insertLineButton
                         width: parent.width
                         height: width
-                        color: colorVariables.backgroundColor3
+                        color: colorVariables.backgroundColor2
                         radius: 4
+
+                        Text {
+                            anchors.centerIn: parent
+                            text: "-"
+                            color: colorVariables.light
+                        }
+
+                        MouseArea {
+                            anchors.fill: parent
+
+                            onClicked: {
+                                textArea.insert(textArea.cursorPosition, "\n---\n")
+                            }
+                        }
                     }
 
                     Rectangle {
+                        id: insertBoldButton
                         width: parent.width
                         height: width
-                        color: colorVariables.backgroundColor3
+                        color: colorVariables.backgroundColor2
                         radius: 4
+
+                        Text {
+                            anchors.centerIn: parent
+                            text: "B"
+                            color: colorVariables.light
+                        }
+
+                        MouseArea {
+                            anchors.fill: parent
+
+                            onClicked: {
+                                textArea.insert(textArea.selectionStart, "**")
+                                textArea.insert(textArea.cursorPosition, "**")
+                            }
+                        }
+                    }
+
+                    Rectangle {
+                        id: insertHeaderButton
+                        width: parent.width
+                        height: width
+                        color: colorVariables.backgroundColor2
+                        radius: 4
+
+                        Text {
+                            anchors.centerIn: parent
+                            text: "H1"
+                            color: colorVariables.light
+                        }
+
+                        MouseArea {
+                            anchors.fill: parent
+
+                            onClicked: {
+                                textArea.insert(textArea.selectionStart, "# ")
+                                textArea.insert(textArea.cursorPosition, "\n\n")
+                            }
+                        }
                     }
                 }
 
                 ScrollView {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
+                    rightPadding: 32
 
                     TextArea {
+                        id: textArea
                         anchors.topMargin: 32
                         text: typographyVariables.multylinePlaceholder
                         wrapMode: "WordWrap"
                         font.pixelSize: 18
-                        textFormat: "MarkdownText"
+                        textFormat: previewButton.isActive ? "MarkdownText" : "PlainText"
 
                         selectionColor: colorVariables.backgroundColor3
                         selectedTextColor: colorVariables.light
+
+                        // onTextChanged: previewButton.isActive = false
                     }
                 }
             }
-        }
     }
 }

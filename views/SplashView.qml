@@ -16,7 +16,7 @@ Window {
     height: 430
     flags: Qt.SplashScreen
     color: "transparent"
-
+    
     // Bachground
     Rectangle {
         id: background

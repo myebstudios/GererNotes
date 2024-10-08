@@ -29,7 +29,7 @@ ApplicationWindow {
 
     StackLayout {
         anchors.fill: parent
-        currentIndex: 2
+        currentIndex: 1
 
         EmptyListView {}
         EditNoteView {}
