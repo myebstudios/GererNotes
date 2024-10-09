@@ -3,11 +3,11 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import "../variables"
 
-Pane {
+Rectangle {
     id: root
-    implicitWidth: row.width + (padding*3)
+    implicitWidth: row.width + 24
     implicitHeight: 36
-    padding: 8
+    // padding: 8
 
     // Variables
     ColorVariables {
@@ -20,10 +20,8 @@ Pane {
     property string text: "Click Me"
     property string iconSource: "../assets/plus.png"
 
-    background: Rectangle {
-        color: colorVariables.primaryColor
-        radius: 4
-    }
+    color: colorVariables.primaryColor
+    radius: 4
 
     RowLayout {
         id: row
@@ -43,5 +41,12 @@ Pane {
             font: typographyVariables.bodyStrongFont
             Layout.alignment: Qt.AlignVCenter
         }
+    }
+
+    MouseArea {
+        id: mouseArea
+        anchors.fill: parent
+
+        cursorShape: Qt.PointingHandCursor
     }
 }

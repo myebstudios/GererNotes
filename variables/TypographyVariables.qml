@@ -13,7 +13,8 @@ Item {
     }
     property var bodyStrongFont: {
         "pixelSize": 14,
-        "bold": true
+        "bold": true,
+        "weight": 600
     }
     property var subtitleFont: {
         "pixelSize": 20,

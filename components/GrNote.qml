@@ -18,10 +18,11 @@ ColumnLayout {
 
     property string title: "Note title"
     property string date: "note date"
+    property string folder: "folder name"
 
     Pane {
         Layout.fillWidth: true
-        height: 100
+        padding: 32
 
         background: Rectangle {
             color: colorVariables.backgroundColor3
@@ -47,14 +48,15 @@ ColumnLayout {
 
         RowLayout {
             anchors.fill: parent
-            spacing: 8
+            spacing: 0
 
             ColumnLayout {
                 Layout.fillWidth: true
-                spacing: 0
+                anchors.right: optionButton.left
+                anchors.left: parent.left
+                spacing: 4
 
                 Text {
-                    id: title
                     text: root.title
                     font: typographyVariables.bodyStrongFont
                     color: colorVariables.light
@@ -64,17 +66,49 @@ ColumnLayout {
                     spacing: 8
 
                     Text {
-                        id: date
                         text: root.date
                         font: typographyVariables.captionFont
                         color: colorVariables.light
                         opacity: 0.5
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+
+                    Pane {
+                        topPadding: 2
+                        rightPadding: 4
+                        bottomPadding: 2
+                        leftPadding: 4
+
+                        background: Rectangle {
+                            color: colorVariables.primaryColor
+                            radius: 2
+                            opacity: 0.16
+                        }
+
+                        Text {
+                            text: root.folder
+                            font: typographyVariables.captionFont
+                            color: colorVariables.primaryColor
+                        }
                     }
                 }
+
+                // Rectangle {
+                //     color: "green"
+                //     anchors.fill: parent
+                // }
             }
 
             Image {
+                id: optionButton
                 source: "../assets/more.png"
+                Layout.alignment: Qt.AlignCenter
+                anchors.right: parent.right
+
+                // Rectangle {
+                //     color: "red"
+                //     anchors.fill: parent
+                // }
             }
         }
     }

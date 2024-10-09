@@ -27,7 +27,7 @@ Page {
         height: 250
 
         background: Rectangle {
-            color: colorVariables.backgroundColor2
+            color: colorVariables.backgroundColor1
         }
     }
 
@@ -41,21 +41,44 @@ Page {
 
             GridLayout {
                 id: gridLayout
-                columns: 3
+                columns: 4
                 columnSpacing: 16
                 rowSpacing: 16
-                width: scrollView.width - (scrollView.rightPadding*2)
+                width: scrollView.width - (scrollView.leftPadding + scrollView.rightPadding)
 
-                Rectangle {
-                    color: "transparent"
-                    anchors.fill: parent
+                onWidthChanged: {
+                    if (width > 1280) {
+                        gridLayout.columns = 5
+                    }
+
+                    if (width > 1080 && width < 1280) {
+                        gridLayout.columns = 4
+                    }
+
+                    if (width < 1080 && width > 800) {
+                        gridLayout.columns = 3
+                    }
+
+                    if (width < 800 && width > 500) {
+                        gridLayout.columns = 2
+                    }
+
+                    if (width < 500) {
+                        gridLayout.columns = 1
+                    }
                 }
 
                 Repeater {
-                    model: 20
+                    model: 32
                     GrNote {
-                        title: "Note " + index
+                        title: "Note title " + index
                     }
+                }
+
+                Rectangle {
+                    color: "transparent"
+                    width: 16
+                    height: width
                 }
             }
         }

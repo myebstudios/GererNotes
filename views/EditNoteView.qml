@@ -211,16 +211,29 @@ Page {
 
                     TextArea {
                         id: textArea
+                        visible: !previewButton.isActive
                         anchors.topMargin: 32
                         text: typographyVariables.multylinePlaceholder
                         wrapMode: "WordWrap"
                         font.pixelSize: 18
-                        textFormat: previewButton.isActive ? "MarkdownText" : "PlainText"
+                        textFormat: "PlainText"
+                        placeholderText: "What's in your mind?"
+                        selectionColor: colorVariables.backgroundColor3
+                        selectedTextColor: colorVariables.light
+                    }
+
+                    TextArea {
+                        id: previewArea
+                        visible: previewButton.isActive
+                        
+                        anchors.topMargin: 32
+                        text: textArea.text
+                        wrapMode: "WordWrap"
+                        font.pixelSize: 18
+                        textFormat: "MarkdownText"
 
                         selectionColor: colorVariables.backgroundColor3
                         selectedTextColor: colorVariables.light
-
-                        // onTextChanged: previewButton.isActive = false
                     }
                 }
             }
