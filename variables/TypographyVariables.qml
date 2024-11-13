@@ -22,6 +22,7 @@ Item {
     property var titleFont: {
         "pixelSize": 28,
         "bold": true
+
     }
     property var titleLargeFont: {
         "pixelSize": 40,
