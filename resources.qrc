@@ -15,5 +15,6 @@
         <file>variables/ColorVariables.qml</file>
         <file>variables/AppVariables.qml</file>
         <file>variables/TypographyVariables.qml</file>
+        <file>bridge.ui.qml</file>
     </qresource>
 </RCC>
